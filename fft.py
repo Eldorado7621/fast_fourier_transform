@@ -24,15 +24,14 @@ f_steps=np.linspace(0,(N-1)*f_signal,N)
 
 #create the signal- I will  be creating 3 different signals
 #the first is a sine wave
-y1=1*np.sin(2*np.pi*f_signal*t)
-
+y1=1*np.cos(2*np.pi*f_signal*t)+1j*np.sin(2*np.pi*f_signal*t)
 
 #the second signal
-y2=1*np.sin(2*np.pi*f_signal*t)+2*np.sin(2*np.pi*3*f_signal*t)
+y2=1*np.sin(2*np.pi*f_signal*t)+2*np.sin(2*np.pi*3*f_signal*t)+1j*np.sin(2*np.pi*f_signal*t)+2j*np.sin(2*np.pi*3*f_signal*t)
 
-#the third signal
+#the third signal- gaussian random signal
 np.random.seed(0)   # start from known state
-y3   = np.array([(np.random.randn()+1j*np.random.randn()) for i in range(N)])
+y = np.array([(np.random.randn()+1j*np.random.randn()) for i in range(N)])
 
 #perform fft on the three signals
 x1=np.fft.fft(y1)
@@ -41,8 +40,7 @@ x1_mag=np.abs(x1)/N
 x2=np.fft.fft(y2)
 x2_mag=np.abs(x2)/N
 
-x3 = np.fft.fft(y3)
-
+x = np.fft.fft(y)
 
 
 #converts the data to 8 bit hex format 
@@ -62,12 +60,24 @@ def dump_mem(filename, x):
 			f.write(di+dr+"\n")
 
 #save the generated data as text file in floating point format  
-np.savetxt("inp_cpp.txt", y1, fmt = "%f %f")
-np.savetxt("out_cpp.txt", x1, fmt = "%f %f")
+np.savetxt("inp_cpp.txt", y, fmt = "%f %f")
+np.savetxt("out_cpp.txt", x, fmt = "%f %f")
+
+np.savetxt("inp_cpp1.txt", y1, fmt = "%f %f")
+np.savetxt("out_cpp1.txt", x1, fmt = "%f %f")
+
+np.savetxt("inp_cpp2.txt", y2, fmt = "%f %f")
+np.savetxt("out_cpp2.txt", x2, fmt = "%f %f")
 
 #save the generated data in hex format
+dump_mem("inp_hex.mem", y)
+dump_mem("out_hex.mem", x)
+
 dump_mem("inp_hex.mem", y1)
 dump_mem("out_hex.mem", x1)
+
+dump_mem("inp_hex.mem", y2)
+dump_mem("out_hex.mem", x2)
 
 
 #plot
@@ -84,4 +94,5 @@ ax1.plot(t,y1,'.-')
 #ax2.plot(f_steps,x_mag,'.-')
 
 ax2.plot(f_plot,x1_mag_plot,'.-')
+
 plt.show()
