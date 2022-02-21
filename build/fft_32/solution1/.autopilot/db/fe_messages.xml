@@ -1,0 +1,45 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:45:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:46:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:45:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="FFT" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=FFT" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:45:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FFT" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="data_pack" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FFT" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="data_pack" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:47:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FFT" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis register both port=data_OUT" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FFT" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis register both port=data_IN" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../vhls/fixed/fft.cpp:44:0" msg_body="Inlining function 'bitreverse(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)' into 'FFT(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)'">
+        <args Callee="bitreverse(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)" Caller="FFT(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:44:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'data_IN'">
+        <args Name="data_IN"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="../vhls/fixed/fft.cpp:44:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'data_OUT'">
+        <args Name="data_OUT"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="../vhls/fixed/fft.cpp:68:56" msg_body="Inlining function '_llvm.fpga.pack.none.i32.s_class.std::complex&lt;ap_fixed&lt;16, 8, AP_TRN, AP_WRAP, 0&gt; &gt;s' into 'FFT(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)'">
+        <args Callee="_llvm.fpga.pack.none.i32.s_class.std::complex&lt;ap_fixed&lt;16, 8, AP_TRN, AP_WRAP, 0&gt; &gt;s" Caller="FFT(std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*, std::complex&lt;ap_fixed&lt;16, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;*)"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

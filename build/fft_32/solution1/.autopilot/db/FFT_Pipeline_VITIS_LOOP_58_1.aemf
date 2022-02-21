@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1643943274904">
+  <ports id="1" name="data_IN" type="PortType" coreId="997420912" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="xin_M_real_V" type="PortType" coreName="RAM" coreId="3872881248" bitwidth="16" direction="DirOut" iftype="IfTypeRegister" arraysize="32">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <ports id="3" name="xin_M_imag_V" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="16" direction="DirOut" iftype="IfTypeRegister" arraysize="32">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="34" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="35" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="37" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="40" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="43" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="44" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="45" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="46" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="49" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@ports.1"/>
+  <edges id="54" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="55" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="56" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="59" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@ports.2"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="68" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="69" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="70" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="71" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="113" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="115" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="116" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="117" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="118" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="119" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <blocks id="8" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>block_15</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="i" originalName="i" coreId="1667592275" bitwidth="6" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="i_write_ln0" coreId="6648675" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="br_ln0" coreId="1918115940" opcode="br" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <controlInputObjs>block_15</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="29" name=".preheader.preheader.exitStub" type="BlockType">
+    <controlInputObjs>block_15</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="_ln0" coreId="1634956133" opcode="ret" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="100" pipe_depth="1" RegionName="VITIS_LOOP_58_1">
+    <basic_blocks id="15" name="block_15" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.preheader.preheader.exitStub</controlOutputObjs>
+      <controlOutputObjs>.split4</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="9" name="i_3" lineNumber="58" originalName="i" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreId="3344699613" contextFuncName="FFT" bitwidth="6" opcode="load" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="icmp_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." rtlName="icmp_ln58_fu_92_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="FFT" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.42" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="add_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." rtlName="add_ln58_fu_98_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="FFT" bitwidth="6" opcode="add" m_display="0" m_delay="1.82" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="br_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreId="1814062958" contextFuncName="FFT" opcode="br" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split4</controlInputObjs>
+        <controlInputObjs>.preheader.preheader.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../vhls/fixed/fft.cpp">
+        <validLinenumbers>58</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="27" name=".split4" type="BlockType">
+      <controlInputObjs>block_15</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_15</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="i_cast" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." rtlName="i_cast_fu_104_p1" coreId="1818324545" contextFuncName="FFT" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="data_IN_read" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="no" opType="adapter" coreId="115" contextFuncName="FFT" bitwidth="32" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>data_IN</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="trunc_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." rtlName="xin_M_real_V_d0" coreId="44" contextFuncName="FFT" bitwidth="16" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="xin_M_real_V_addr" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreId="1818324329" contextFuncName="FFT" bitwidth="5" opcode="getelementptr" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>xin_M_real_V</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="xin_M_real_V_addr_write_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="FFT" opcode="store" m_display="0" m_delay="2.32" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="trunc_ln58_1" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." rtlName="xin_M_imag_V_d0" coreId="6001" contextFuncName="FFT" bitwidth="16" opcode="partselect" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="xin_M_imag_V_addr" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreId="1819243365" contextFuncName="FFT" bitwidth="5" opcode="getelementptr" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>xin_M_imag_V</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="xin_M_imag_V_addr_write_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="FFT" opcode="store" m_display="0" m_delay="2.32" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="i_write_ln58" lineNumber="58" fileName="../vhls/fixed/fft.cpp" fileDirectory=".." coreId="0" contextFuncName="FFT" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="../vhls/fixed/fft.cpp" linenumber="58" fileDirectory="/home/sam/teach-fpga/01-fft/build" functionName="FFT"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="br_ln0" coreId="0" opcode="br" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <controlInputObjs>block_15</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../vhls/fixed/fft.cpp">
+        <validLinenumbers>58</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <regnodes realName="i_reg_131">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <expressionNodes realName="i_fu_48">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln58_fu_92">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xin_M_imag_V_addr_gep_fu_71">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xin_M_real_V_addr_gep_fu_58">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln58_1_fu_115">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln58_fu_98">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln58_fu_110">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast_fu_104">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="store_ln0_store_fu_84">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln58_store_fu_126">
+    <nodeIds>25</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_3_load_fu_89">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="data_IN_read_read_fu_52">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="xin_M_imag_V">
+    <nodeIds>24</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="xin_M_real_V">
+    <nodeIds>21</nodeIds>
+  </memoryPorts>
+  <ioPorts name="data_IN">
+    <contents name="read">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="xin_M_imag_V(p0)">
+    <contents name="store">
+      <nodeIds>24</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="xin_M_real_V(p0)">
+    <contents name="store">
+      <nodeIds>21</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="FFT_Pipeline_VITIS_LOOP_58_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="34" mMaxLatency="34">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>8</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_58_1" mII="1" mDepth="1" mMinTripCount="32" mMaxTripCount="32" mMinLatency="32" mMaxLatency="32" mType="1">
+      <basicBlocks>15</basicBlocks>
+      <basicBlocks>27</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>29</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

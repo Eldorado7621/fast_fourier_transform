@@ -1,0 +1,189 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z010clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.194 GB.
+INFO: [HLS 200-10] Analyzing design file '../vhls/fixed/fft.cpp' ... 
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (../vhls/fixed/fft.cpp:45:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (../vhls/fixed/fft.cpp:46:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.83 seconds. CPU system time: 0.35 seconds. Elapsed time: 4.57 seconds; current allocated memory: 285.258 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-178] Inlining function 'bitreverse(std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*, std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*)' into 'FFT(std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*, std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*)' (../vhls/fixed/fft.cpp:44:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'data_IN' (../vhls/fixed/fft.cpp:44:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'data_OUT' (../vhls/fixed/fft.cpp:44:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i32.s_class.std::complex<ap_fixed<16, 8, AP_TRN, AP_WRAP, 0> >s' into 'FFT(std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*, std::complex<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >*)' (../vhls/fixed/fft.cpp:68:56)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.3 seconds. CPU system time: 0.23 seconds. Elapsed time: 3.67 seconds; current allocated memory: 285.258 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 285.258 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.23 seconds; current allocated memory: 348.449 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.48 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.5 seconds; current allocated memory: 445.617 MB.
+INFO: [XFORM 203-510] Pipelining loop 'FFT_label1' (../vhls/fixed/fft.cpp:25) in function 'FFT0.1' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'FFT_label1' (../vhls/fixed/fft.cpp:25) in function 'FFT0' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_58_1' (../vhls/fixed/fft.cpp:58) in function 'FFT' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'bitreversal_label1' (../vhls/fixed/fft.cpp:17) in function 'FFT' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_2' (../vhls/fixed/fft.cpp:68) in function 'FFT' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../vhls/fixed/fft.cpp:25:6) in function 'FFT0.1'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../vhls/fixed/fft.cpp:25:6) in function 'FFT0'... converting 4 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'FFT0' into 'FFT' (../vhls/fixed/fft.cpp:66) automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.5 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.53 seconds; current allocated memory: 553.277 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'xin._M_real.V' (../vhls/fixed/fft.cpp:58:51)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_OUT0._M_real.V' (../vhls/fixed/fft.cpp:19:15)
+INFO: [HLS 200-472] Inferring partial write operation for 'xout._M_real.V' (../vhls/fixed/fft.cpp:31:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'xout._M_real.V' (../vhls/fixed/fft.cpp:32:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_OUT__M_real.0.0.0' (../vhls/fixed/fft.cpp:31:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_OUT__M_real.0.0.0' (../vhls/fixed/fft.cpp:32:20)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 628.820 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'FFT' ...
+WARNING: [SYN 201-103] Legalizing function name 'FFT0.1_Pipeline_FFT_label1' to 'FFT0_1_Pipeline_FFT_label1'.
+WARNING: [SYN 201-103] Legalizing function name 'FFT0.1' to 'FFT0_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT_Pipeline_VITIS_LOOP_58_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_58_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_58_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 629.832 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 629.832 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT_Pipeline_bitreversal_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'bitreversal_label1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'bitreversal_label1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 630.016 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 630.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT0_1_Pipeline_FFT_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln1245) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln712_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln1246) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln712) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'FFT_label1'.
+WARNING: [HLS 200-880] The II Violation in module 'FFT0_1_Pipeline_FFT_label1' (loop 'FFT_label1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('data_OUT_M_imag_0_0_0_addr_1_write_ln32', ../vhls/fixed/fft.cpp:32) of variable '__r._M_imag.V' on array 'data_OUT_M_imag_0_0_0' and 'store' operation ('data_OUT_M_imag_0_0_0_addr_write_ln31', ../vhls/fixed/fft.cpp:31) of variable '__r._M_imag.V' on array 'data_OUT_M_imag_0_0_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 9, loop 'FFT_label1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 630.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 630.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT0_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 630.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 630.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT_Pipeline_FFT_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln1245) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln712_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln1246) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln712) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'FFT_label1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'FFT_label1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 631.121 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 631.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT_Pipeline_VITIS_LOOP_68_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 631.258 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 631.258 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FFT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 631.402 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 631.402 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FFT_Pipeline_VITIS_LOOP_58_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FFT_Pipeline_VITIS_LOOP_58_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 631.402 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FFT_Pipeline_bitreversal_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'FFT_Pipeline_bitreversal_label1' pipeline 'bitreversal_label1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FFT_Pipeline_bitreversal_label1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 631.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FFT0_1_Pipeline_FFT_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'FFT0_1_Pipeline_FFT_label1' pipeline 'FFT_label1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_9s_24s_24_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_mulsub_16s_9s_24s_24_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16s_10s_24_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FFT0_1_Pipeline_FFT_label1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 632.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FFT0_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FFT0_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 634.250 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================

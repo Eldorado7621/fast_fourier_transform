@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="FFT" xd:componentRef="FFT" xd:initiationInterval="303" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="*(data_IN)" xd:originalName="data_IN" xd:direction="in" xd:interfaceRef="data_IN" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(data_OUT)" xd:originalName="data_OUT" xd:direction="out" xd:interfaceRef="data_OUT" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="302" xd:worst-case="302" xd:average-case="302"/>
+  <xd:resourceEstimates xd:LUT="2280" xd:FF="1162" xd:BRAM="0" xd:DSP="8"/>
+</xd:acceleratorMap>

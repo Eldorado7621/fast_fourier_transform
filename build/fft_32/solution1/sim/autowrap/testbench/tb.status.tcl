@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/sam/teach-fpga/01-fft/build/fft_32/solution1/./sim/autowrap/testbench/fft.cpp_pre.cpp.tb.cpp

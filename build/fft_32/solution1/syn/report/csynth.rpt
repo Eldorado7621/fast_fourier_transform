@@ -1,0 +1,177 @@
+
+
+================================================================
+== Synthesis Summary Report of 'FFT'
+================================================================
++ General Information: 
+    * Date:           Fri Feb  4 03:54:35 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+    * Project:        fft_32
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z010-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+------------+-----+
+    |               Modules              | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |           |            |     |
+    |               & Loops              | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |     LUT    | URAM|
+    +------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+------------+-----+
+    |+ FFT                               |     -|  0.53|      302|  3.020e+03|         -|      303|     -|        no|     -|  8 (10%)|  1162 (3%)|  2280 (12%)|    -|
+    | + FFT_Pipeline_VITIS_LOOP_58_1     |     -|  3.55|       34|    340.000|         -|       34|     -|        no|     -|        -|    8 (~0%)|    64 (~0%)|    -|
+    |  o VITIS_LOOP_58_1                 |     -|  7.30|       32|    320.000|         1|        1|    32|       yes|     -|        -|          -|           -|    -|
+    | + FFT_Pipeline_bitreversal_label1  |     -|  2.66|       35|    350.000|         -|       35|     -|        no|     -|        -|   28 (~0%)|    65 (~0%)|    -|
+    |  o bitreversal_label1              |     -|  7.30|       33|    330.000|         3|        1|    32|       yes|     -|        -|          -|           -|    -|
+    | + FFT0_1                           |     -|  0.53|       40|    400.000|         -|       40|     -|        no|     -|   4 (5%)|   378 (1%)|    645 (3%)|    -|
+    |  + FFT0_1_Pipeline_FFT_label1      |     -|  0.53|       39|    390.000|         -|       39|     -|        no|     -|   4 (5%)|   367 (1%)|    605 (3%)|    -|
+    |   o FFT_label1                     |    II|  7.30|       37|    370.000|         8|        2|    16|       yes|     -|        -|          -|           -|    -|
+    | + FFT_Pipeline_FFT_label1          |     -|  0.58|       22|    220.000|         -|       22|     -|        no|     -|   4 (5%)|  249 (~0%)|    321 (1%)|    -|
+    |  o FFT_label1                      |     -|  7.30|       20|    200.000|         6|        1|    16|       yes|     -|        -|          -|           -|    -|
+    | + FFT_Pipeline_VITIS_LOOP_68_2     |     -|  3.89|       34|    340.000|         -|       34|     -|        no|     -|        -|    9 (~0%)|    73 (~0%)|    -|
+    |  o VITIS_LOOP_68_2                 |     -|  7.30|       32|    320.000|         2|        1|    32|       yes|     -|        -|          -|           -|    -|
+    +------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++-----------+---------------+-------+--------+--------+
+| Interface | Register Mode | TDATA | TREADY | TVALID |
++-----------+---------------+-------+--------+--------+
+| data_IN   | both          | 32    | 1      | 1      |
+| data_OUT  | both          | 32    | 1      | 1      |
++-----------+---------------+-------+--------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+------------------------------------------------+
+| Argument | Direction | Datatype                                       |
++----------+-----------+------------------------------------------------+
+| data_IN  | in        | complex<ap_fixed<16, 8, AP_TRN, AP_WRAP, 0> >* |
+| data_OUT | out       | complex<ap_fixed<16, 8, AP_TRN, AP_WRAP, 0> >* |
++----------+-----------+------------------------------------------------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+
+| Argument | HW Interface | HW Type   |
++----------+--------------+-----------+
+| data_IN  | data_IN      | interface |
+| data_OUT | data_OUT     | interface |
++----------+--------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+------------------+-----+--------+---------+
+| Name                                 | DSP | Pragma | Variable         | Op  | Impl   | Latency |
++--------------------------------------+-----+--------+------------------+-----+--------+---------+
+| + FFT                                | 8   |        |                  |     |        |         |
+|  + FFT_Pipeline_VITIS_LOOP_58_1      | 0   |        |                  |     |        |         |
+|    add_ln58_fu_98_p2                 | -   |        | add_ln58         | add | fabric | 0       |
+|  + FFT_Pipeline_bitreversal_label1   | 0   |        |                  |     |        |         |
+|    add_ln17_fu_121_p2                | -   |        | add_ln17         | add | fabric | 0       |
+|  + FFT0_1                            | 4   |        |                  |     |        |         |
+|    sub_fu_76_p2                      | -   |        | sub              | add | fabric | 0       |
+|    sub15_cast_fu_83_p2               | -   |        | sub15_cast       | add | fabric | 0       |
+|   + FFT0_1_Pipeline_FFT_label1       | 4   |        |                  |     |        |         |
+|     i_6_fu_262_p2                    | -   |        | i_6              | add | fabric | 0       |
+|     Ulimit_fu_326_p2                 | -   |        | Ulimit           | add | fabric | 0       |
+|     Llimit_fu_331_p2                 | -   |        | Llimit           | add | fabric | 0       |
+|     mul_mul_16s_10s_24_4_1_U9        | 1   |        | mul_ln712        | mul | dsp    | 3       |
+|     mac_mulsub_16s_9s_24s_24_4_1_U11 | 1   |        | mul_ln1246       | mul | dsp    | 3       |
+|     mac_mulsub_16s_9s_24s_24_4_1_U11 | 1   |        | ret_V            | sub | dsp    | 3       |
+|     mul_mul_16s_10s_24_4_1_U10       | 1   |        | mul_ln712_1      | mul | dsp    | 3       |
+|     mac_muladd_16s_9s_24s_24_4_1_U12 | 1   |        | mul_ln1245       | mul | dsp    | 3       |
+|     mac_muladd_16s_9s_24s_24_4_1_U12 | 1   |        | ret_V_2          | add | dsp    | 3       |
+|     p_r_M_real_V_3_fu_411_p2         | -   |        | p_r_M_real_V_3   | sub | fabric | 0       |
+|     p_r_M_imag_V_3_fu_418_p2         | -   |        | p_r_M_imag_V_3   | sub | fabric | 0       |
+|     p_r_M_real_V_4_fu_425_p2         | -   |        | p_r_M_real_V_4   | add | fabric | 0       |
+|     p_r_M_imag_V_4_fu_431_p2         | -   |        | p_r_M_imag_V_4   | add | fabric | 0       |
+|     butterfly_span_3_fu_290_p2       | -   |        | butterfly_span_3 | add | fabric | 0       |
+|     butterfly_pass_1_fu_347_p2       | -   |        | butterfly_pass_1 | add | fabric | 0       |
+|  + FFT_Pipeline_FFT_label1           | 4   |        |                  |     |        |         |
+|    i_4_fu_199_p2                     | -   |        | i_4              | add | fabric | 0       |
+|    mul_mul_16s_10s_24_4_1_U35        | 1   |        | mul_ln712        | mul | dsp    | 3       |
+|    mac_mulsub_16s_9s_24s_24_4_1_U37  | 1   |        | mul_ln1246       | mul | dsp    | 3       |
+|    mac_mulsub_16s_9s_24s_24_4_1_U37  | 1   |        | ret_V            | sub | dsp    | 3       |
+|    mul_mul_16s_10s_24_4_1_U36        | 1   |        | mul_ln712_1      | mul | dsp    | 3       |
+|    mac_muladd_16s_9s_24s_24_4_1_U38  | 1   |        | mul_ln1245       | mul | dsp    | 3       |
+|    mac_muladd_16s_9s_24s_24_4_1_U38  | 1   |        | ret_V_1          | add | dsp    | 3       |
+|    xout_M_real_V_d1                  | -   |        | p_r_M_real_V_1   | sub | fabric | 0       |
+|    xout_M_imag_V_d1                  | -   |        | p_r_M_imag_V_1   | sub | fabric | 0       |
+|    xout_M_real_V_d0                  | -   |        | p_r_M_real_V_2   | add | fabric | 0       |
+|    xout_M_imag_V_d0                  | -   |        | p_r_M_imag_V_2   | add | fabric | 0       |
+|    butterfly_span_fu_236_p2          | -   |        | butterfly_span   | add | fabric | 0       |
+|  + FFT_Pipeline_VITIS_LOOP_68_2      | 0   |        |                  |     |        |         |
+|    add_ln68_fu_95_p2                 | -   |        | add_ln68         | add | fabric | 0       |
++--------------------------------------+-----+--------+------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++------------------------------------+------+------+--------+--------------------+---------+------+---------+
+| Name                               | BRAM | URAM | Pragma | Variable           | Storage | Impl | Latency |
++------------------------------------+------+------+--------+--------------------+---------+------+---------+
+| + FFT                              | 0    | 0    |        |                    |         |      |         |
+|   xin_M_real_V_U                   | -    | -    |        | xin_M_real_V       | ram_1p  | auto | 1       |
+|   xin_M_imag_V_U                   | -    | -    |        | xin_M_imag_V       | ram_1p  | auto | 1       |
+|   data_OUT0_M_real_V_U             | -    | -    |        | data_OUT0_M_real_V | ram_s2p | auto | 1       |
+|   data_OUT0_M_imag_V_U             | -    | -    |        | data_OUT0_M_imag_V | ram_s2p | auto | 1       |
+|   W_M_real_V_U                     | -    | -    |        | W_M_real_V         | rom_1p  | auto | 1       |
+|   W_M_imag_V_U                     | -    | -    |        | W_M_imag_V         | rom_1p  | auto | 1       |
+|   data_OUT1_M_real_V_U             | -    | -    |        | data_OUT1_M_real_V | ram_s2p | auto | 1       |
+|   data_OUT1_M_imag_V_U             | -    | -    |        | data_OUT1_M_imag_V | ram_s2p | auto | 1       |
+|   data_OUT2_M_real_V_U             | -    | -    |        | data_OUT2_M_real_V | ram_s2p | auto | 1       |
+|   data_OUT2_M_imag_V_U             | -    | -    |        | data_OUT2_M_imag_V | ram_s2p | auto | 1       |
+|   data_OUT3_M_real_V_U             | -    | -    |        | data_OUT3_M_real_V | ram_s2p | auto | 1       |
+|   data_OUT3_M_imag_V_U             | -    | -    |        | data_OUT3_M_imag_V | ram_s2p | auto | 1       |
+|   data_OUT4_M_real_V_U             | -    | -    |        | data_OUT4_M_real_V | ram_s2p | auto | 1       |
+|   data_OUT4_M_imag_V_U             | -    | -    |        | data_OUT4_M_imag_V | ram_s2p | auto | 1       |
+|   xout_M_real_V_U                  | -    | -    |        | xout_M_real_V      | ram_t2p | auto | 1       |
+|   xout_M_imag_V_U                  | -    | -    |        | xout_M_imag_V      | ram_t2p | auto | 1       |
+|  + FFT_Pipeline_bitreversal_label1 | 0    | 0    |        |                    |         |      |         |
+|    rev_32_U                        | -    | -    |        | rev_32             | rom_1p  | auto | 1       |
+|  + FFT0_1                          | 0    | 0    |        |                    |         |      |         |
+|   + FFT0_1_Pipeline_FFT_label1     | 0    | 0    |        |                    |         |      |         |
+|     W_M_real_V_U                   | -    | -    |        | W_M_real_V         | rom_1p  | auto | 1       |
+|     W_M_imag_V_U                   | -    | -    |        | W_M_imag_V         | rom_1p  | auto | 1       |
++------------------------------------+------+------+--------+--------------------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Ignored Pragmas
++-----------+----------+---------------------------------+-------------------------------------------------+
+| Type      | Options  | Location                        | Messages                                        |
++-----------+----------+---------------------------------+-------------------------------------------------+
+| data_pack | variable | ../vhls/fixed/fft.cpp:45 in fft | the pragma is not supported and will be ignored |
+| data_pack | variable | ../vhls/fixed/fft.cpp:46 in fft | the pragma is not supported and will be ignored |
++-----------+----------+---------------------------------+-------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+----------------------------------+-------------------------------------------+
+| Type      | Options                          | Location                                  |
++-----------+----------------------------------+-------------------------------------------+
+| interface | axis register both port=data_OUT | ../vhls/fixed/fft.cpp:47 in fft, data_OUT |
+| interface | axis register both port=data_IN  | ../vhls/fixed/fft.cpp:48 in fft, data_IN  |
++-----------+----------------------------------+-------------------------------------------+
+
+

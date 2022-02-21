@@ -1,0 +1,159 @@
+
+
+================================================================
+== Vitis HLS Report for 'FFT_Pipeline_bitreversal_label1'
+================================================================
+* Date:           Fri Feb  4 03:54:34 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        fft_32
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z010-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.644 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       35|       35|  0.350 us|  0.350 us|   35|   35|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                      |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- bitreversal_label1  |       33|       33|         3|          1|          1|    32|       yes|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+----+-------+-------+-----+
+|       Name      | BRAM_18K| DSP|   FF  |  LUT  | URAM|
++-----------------+---------+----+-------+-------+-----+
+|DSP              |        -|   -|      -|      -|    -|
+|Expression       |        -|   -|      0|     26|    -|
+|FIFO             |        -|   -|      -|      -|    -|
+|Instance         |        -|   -|      -|      -|    -|
+|Memory           |        0|   -|      5|      3|    -|
+|Multiplexer      |        -|   -|      -|     36|    -|
+|Register         |        -|   -|     23|      -|    -|
++-----------------+---------+----+-------+-------+-----+
+|Total            |        0|   0|     28|     65|    0|
++-----------------+---------+----+-------+-------+-----+
+|Available        |      120|  80|  35200|  17600|    0|
++-----------------+---------+----+-------+-------+-----+
+|Utilization (%)  |        0|   0|     ~0|     ~0|    0|
++-----------------+---------+----+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +----------+----------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |  Memory  |                       Module                       | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------+----------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |rev_32_U  |FFT_Pipeline_bitreversal_label1_rev_32_ROM_AUTO_1R  |        0|  5|   3|    0|    32|    5|     1|          160|
+    +----------+----------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total     |                                                    |        0|  5|   3|    0|    32|    5|     1|          160|
+    +----------+----------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln17_fu_121_p2   |         +|   0|  0|  14|           6|           1|
+    |icmp_ln17_fu_115_p2  |      icmp|   0|  0|  10|           6|           7|
+    |ap_enable_pp0        |       xor|   0|  0|   2|           1|           2|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  26|          13|          10|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_1     |   9|          2|    6|         12|
+    |i_fu_36                  |   9|          2|    6|         12|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  36|          8|   14|         28|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+---+----+-----+-----------+
+    |               Name               | FF| LUT| Bits| Const Bits|
+    +----------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                         |  1|   0|    1|          0|
+    |ap_done_reg                       |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |  1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |  1|   0|    1|          0|
+    |i_3_cast_reg_154                  |  6|   0|   64|         58|
+    |i_3_cast_reg_154_pp0_iter1_reg    |  6|   0|   64|         58|
+    |i_fu_36                           |  6|   0|    6|          0|
+    +----------------------------------+---+----+-----+-----------+
+    |Total                             | 23|   0|  139|        116|
+    +----------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+---------------------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |          Source Object          |    C Type    |
++-----------------------------+-----+-----+------------+---------------------------------+--------------+
+|ap_clk                       |   in|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|ap_rst                       |   in|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|ap_start                     |   in|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|ap_done                      |  out|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|ap_idle                      |  out|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|ap_ready                     |  out|    1|  ap_ctrl_hs|  FFT_Pipeline_bitreversal_label1|  return value|
+|xin_M_real_V_address0        |  out|    5|   ap_memory|                     xin_M_real_V|         array|
+|xin_M_real_V_ce0             |  out|    1|   ap_memory|                     xin_M_real_V|         array|
+|xin_M_real_V_q0              |   in|   16|   ap_memory|                     xin_M_real_V|         array|
+|xin_M_imag_V_address0        |  out|    5|   ap_memory|                     xin_M_imag_V|         array|
+|xin_M_imag_V_ce0             |  out|    1|   ap_memory|                     xin_M_imag_V|         array|
+|xin_M_imag_V_q0              |   in|   16|   ap_memory|                     xin_M_imag_V|         array|
+|data_OUT0_M_real_V_address0  |  out|    5|   ap_memory|               data_OUT0_M_real_V|         array|
+|data_OUT0_M_real_V_ce0       |  out|    1|   ap_memory|               data_OUT0_M_real_V|         array|
+|data_OUT0_M_real_V_we0       |  out|    1|   ap_memory|               data_OUT0_M_real_V|         array|
+|data_OUT0_M_real_V_d0        |  out|   16|   ap_memory|               data_OUT0_M_real_V|         array|
+|data_OUT0_M_imag_V_address0  |  out|    5|   ap_memory|               data_OUT0_M_imag_V|         array|
+|data_OUT0_M_imag_V_ce0       |  out|    1|   ap_memory|               data_OUT0_M_imag_V|         array|
+|data_OUT0_M_imag_V_we0       |  out|    1|   ap_memory|               data_OUT0_M_imag_V|         array|
+|data_OUT0_M_imag_V_d0        |  out|   16|   ap_memory|               data_OUT0_M_imag_V|         array|
++-----------------------------+-----+-----+------------+---------------------------------+--------------+
+

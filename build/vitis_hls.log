@@ -1,0 +1,42 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'sam' on host 'sam-HP-Pavilion-Laptop-15-eg0xxx' (Linux_x86_64 version 5.4.0-97-generic) on Fri Feb 04 04:02:05 CET 2022
+INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/sam/teach-fpga/01-fft/build'
+Sourcing Tcl script '/home/sam/teach-fpga/01-fft/build/fft_32/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: open_project fft_32 
+INFO: [HLS 200-10] Opening project '/home/sam/teach-fpga/01-fft/build/fft_32'.
+INFO: [HLS 200-1510] Running: set_top FFT 
+INFO: [HLS 200-1510] Running: add_files ../vhls/fixed/fft.cpp 
+INFO: [HLS 200-10] Adding design file '../vhls/fixed/fft.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../vhls/fixed/fft_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file '../vhls/fixed/fft_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb inp_cpp.txt 
+INFO: [HLS 200-10] Adding test bench file 'inp_cpp.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb out_cpp.txt 
+INFO: [HLS 200-10] Adding test bench file 'out_cpp.txt' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/sam/teach-fpga/01-fft/build/fft_32/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z010clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  4 04:02:16 2022...
+INFO: [HLS 200-802] Generated output file fft_32/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 13.12 seconds. CPU system time: 0.67 seconds. Elapsed time: 13.72 seconds; current allocated memory: -930.094 MB.
+INFO: [HLS 200-112] Total CPU user time: 14.84 seconds. Total CPU system time: 0.97 seconds. Total elapsed time: 14.96 seconds; peak allocated memory: 292.301 MB.
