@@ -1,1 +1,2 @@
-# fast_fourier_transform
+# High-Level-Synthesis-of-fast-fourier-transform
+Using the IP core made by Vivado might not be suitable for one's application, as such one could want to design custom made IP core or for other instance, one might have some high level code that could be interested in converting into hardware, well High Level Synthesis makes this possible. For this project, I explored HLS with a Fast Fourier Transformation IP
